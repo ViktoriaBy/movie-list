@@ -30,20 +30,25 @@ function addMovie(e){
 
 function deleteMovie(e){
     e.target.parentNode.remove();
-    message.textContent = 'Movie deleted!'
+    //message.textContent = 'Movie deleted!'
+    message.textContent = `${e.target.parentNode.firstChild.textContent } deleted`
 }
 
-
+revealMessage()
 //CROSS OFF MOVIE
 
 function crossOfMovie(e){
     e.target.classList.toggle('checked'); 
 
     if(e.target.classList.contains('checked') === true){
-        message.textContent = 'Movie watched'
+        // message.textContent = 'Movie watched'
+        message.textContent = `${e.target.textContent } watched already`
     }else{
- message.textContent = 'Movie added back!'
+ //message.textContent = 'Movie added back!'
+        message.textContent = `${e.target.textContent } added back`
     }
+
+    revealMessage()
 }
 
 function revealMessage(){
